@@ -1,0 +1,11 @@
+---
+  - hosts: all
+    become: yes
+    tasks:
+      - name: Installing the docker file
+        get_url:
+          url: https://raw.githubusercontent.com/sandeepmchary/get/master/get-docker.sh
+          dest: /home/ansible
+          command:
+            cd /home/ansible
+            sh get-docker.sh
